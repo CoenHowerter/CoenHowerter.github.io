@@ -261,8 +261,8 @@
             <h2>About Me</h2>
             <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
                 <div style="flex: 1; min-width: 300px;">
-                    <p>CHANGE ME (About Me Paragraph 1) - Write about your background, what drew you to astrobiology, and your academic interests.</p>
-                    <p>CHANGE ME (About Me Paragraph 2) - Describe your career goals and what excites you most about studying life in the universe.</p>
+                    <p>I am a student with a strong interest in astrobiology, driven by curiosity about how life can arise and persist in extreme environments beyond Earth. My background spans physics, biology, and astronomy, with a focus on applying these disciplines through observational research, data analysis, and hands-on projects. I am particularly interested in planetary science, extremophile studies, and the role of astrophysical environments in shaping habitability, and I am actively building experience to pursue research opportunities in these areas.</p>
+                    <p>My career goal is to pursue research in astrobiology, focusing on understanding the limits of life and the conditions that make planetary environments habitable. I am particularly excited by the challenge of combining physics, chemistry, and biology to study how life might emerge, adapt, and be detected beyond Earth. The possibility of using real data from telescopes, planetary missions, and laboratory experiments to answer fundamental questions about life in the universe.</p>
                 </div>
                 <div style="flex: 0 0 250px;">
                     <img src="CHANGE ME (URL to your headshot image)" alt="Professional Headshot" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(100, 200, 255, 0.3); border: 3px solid #64c8ff;">

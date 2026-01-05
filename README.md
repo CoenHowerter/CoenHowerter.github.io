@@ -322,16 +322,14 @@
         <section id="skills">
             <h2>Skills & Techniques</h2>
             <div class="skills">
-                <span class="skill-tag">CHANGE ME (Skill 1)</span>
-                <span class="skill-tag">CHANGE ME (Skill 2)</span>
-                <span class="skill-tag">CHANGE ME (Skill 3)</span>
-                <span class="skill-tag">CHANGE ME (Skill 4)</span>
-                <span class="skill-tag">CHANGE ME (Skill 5)</span>
-                <span class="skill-tag">CHANGE ME (Skill 6)</span>
-                <span class="skill-tag">CHANGE ME (Skill 7)</span>
-                <span class="skill-tag">CHANGE ME (Skill 8)</span>
-                <span class="skill-tag">CHANGE ME (Skill 9)</span>
-                <span class="skill-tag">CHANGE ME (Skill 10)</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Astrophotography & Astronomical Imaging</span>
+                <span class="skill-tag">Technical Writing in LaTex</span>
+                <span class="skill-tag">Telescope Operation and Alignment </span>
+                <span class="skill-tag">Teamwork</span>
+                <span class="skill-tag">Troubleshooting</span>
+                <span class="skill-tag">Data Collection</span>
+                <span class="skill-tag">Data Processing & Analysis</span>
             </div>
         </section>
 
@@ -348,11 +346,11 @@
                 </div>
                 <div class="contact-item">
                     <strong>LinkedIn:</strong>
-                    <a href="https://www.linkedin.com/in/coen-howerter/" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/coen-howerter/" target="_blank">LinkedIn/coenhowerter</a>
                 </div>
                 <div class="contact-item">
                     <strong>GitHub:</strong>
-                    <a href="https://github.com/coenhowerter" target="_blank">GitHub</a>
+                    <a href="https://github.com/coenhowerter" target="_blank">GitHub/coenhowerter</a>
                 </div>
                 <div class="contact-item">
                     <strong>University:</strong>

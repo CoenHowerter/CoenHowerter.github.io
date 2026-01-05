@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forensic Psychology Portfolio</title>
+    <title>Coen Howerter | Astrobiology & Astrophysics</title>
     <style>
         * {
             margin: 0;
@@ -11,423 +11,735 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-dark: #0a0e27;
+            --secondary-dark: #1a1f3a;
+            --accent-blue: #4a90e2;
+            --accent-light: #7ab8f5;
+            --text-primary: #e8eef2;
+            --text-secondary: #b8c5d0;
+            --border-color: rgba(74, 144, 226, 0.2);
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.8;
-            color: #1a1a1a;
-            background: #f4f4f4;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
             min-height: 100vh;
         }
 
-        .sidebar {
+        .stars {
             position: fixed;
-            left: 0;
             top: 0;
-            width: 280px;
-            height: 100vh;
-            background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
-            padding: 2rem 1.5rem;
-            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
-            overflow-y: auto;
-            z-index: 1000;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
         }
 
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
+        .star {
+            position: absolute;
+            background: white;
             border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: block;
-            border: 4px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            background: #ffffff;
+            animation: twinkle 4s ease-in-out infinite;
         }
 
-        .sidebar h1 {
-            color: #ffffff;
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.2); }
         }
 
-        .sidebar .subtitle {
-            color: #c8e6c9;
-            font-size: 0.95rem;
-            font-style: italic;
+        header {
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
-        .sidebar nav {
-            margin-top: 2rem;
-        }
-
-        .sidebar nav ul {
-            list-style: none;
-        }
-
-        .sidebar nav li {
-            margin: 0.8rem 0;
-        }
-
-        .sidebar nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: block;
-            padding: 0.7rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-            border-left: 4px solid transparent;
-        }
-
-        .sidebar nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-left-color: #ffffff;
-            padding-left: 1.5rem;
-        }
-
-        .sidebar-footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .contact-link {
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.5rem;
-            color: #c8e6c9;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
             text-decoration: none;
-            margin: 0.8rem 0;
-            font-size: 0.9rem;
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            position: relative;
         }
 
-        .contact-link:hover {
-            color: #ffffff;
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s;
         }
 
-        .main-content {
-            margin-left: 280px;
-            min-height: 100vh;
+        nav a:hover {
+            color: var(--accent-light);
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         .hero {
-            background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
-            color: #ffffff;
-            padding: 4rem 3rem;
+            position: relative;
+            z-index: 1;
+            padding: 6rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(180deg, rgba(10, 14, 39, 0) 0%, rgba(26, 31, 58, 0.3) 100%);
         }
 
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
             font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #7ab8f5 0%, #4a90e2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
             margin: 0 auto;
             line-height: 1.8;
         }
 
-        .content-wrapper {
-            max-width: 1000px;
+        .container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        .section {
-            background: #ffffff;
-            margin: 2.5rem 0;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            border-top: 5px solid #2e7d32;
-        }
-
-        .section h2 {
-            color: #1b5e20;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .section p {
-            color: #424242;
-            margin-bottom: 1.2rem;
-            text-align: justify;
-        }
-
-        .timeline {
+            padding: 0 2rem;
             position: relative;
-            padding-left: 2rem;
-            border-left: 3px solid #81c784;
-            margin: 2rem 0;
+            z-index: 1;
         }
 
-        .timeline-item {
+        section {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(15px);
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            color: var(--accent-light);
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            font-weight: 600;
             position: relative;
-            margin-bottom: 2.5rem;
-            padding-left: 2rem;
+            padding-bottom: 1rem;
         }
 
-        .timeline-item::before {
+        h2::after {
             content: '';
             position: absolute;
-            left: -2.6rem;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: #2e7d32;
-            border: 4px solid #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px #81c784;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-blue);
         }
 
-        .timeline-item h3 {
-            color: #2e7d32;
+        h3 {
+            color: var(--accent-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
             font-size: 1.4rem;
-            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        .timeline-item .meta {
-            color: #757575;
-            font-size: 0.95rem;
-            margin-bottom: 0.8rem;
-            font-style: italic;
-        }
-
-        .timeline-item p {
-            color: #424242;
-        }
-
-        .research-cards {
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .headshot-container {
+            position: relative;
+        }
+
+        .headshot {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            box-shadow: 0 12px 40px rgba(74, 144, 226, 0.3);
+            background: rgba(26, 31, 58, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.2rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .credentials {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(15, 20, 40, 0.6);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .credentials h4 {
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .credentials p {
+            color: var(--text-secondary);
+            margin: 0.3rem 0;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
-        .card {
-            background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
+        .research-card {
+            background: rgba(15, 20, 40, 0.6);
             padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-light));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .research-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(74, 144, 226, 0.25);
+            border-color: var(--accent-blue);
+        }
+
+        .research-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .research-card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .research-card p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+        }
+
+        .projects-category {
+            margin-bottom: 2.5rem;
+        }
+
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .project-item {
+            background: rgba(15, 20, 40, 0.4);
+            padding: 1.2rem;
             border-radius: 8px;
-            border-left: 5px solid #2e7d32;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
             transition: all 0.3s;
         }
 
-        .card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(46, 125, 50, 0.2);
+        .project-item:hover {
+            background: rgba(15, 20, 40, 0.7);
+            border-color: var(--accent-blue);
+            transform: translateX(5px);
         }
 
-        .card h3 {
-            color: #1b5e20;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+        .project-item a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
         }
 
-        .card p {
-            color: #424242;
-            text-align: left;
+        .project-item a:hover {
+            color: var(--accent-blue);
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .skill-item {
-            background: #2e7d32;
-            color: #ffffff;
-            padding: 1rem;
-            text-align: center;
-            border-radius: 8px;
-            font-weight: 600;
-            box-shadow: 0 3px 10px rgba(46, 125, 50, 0.3);
+        .skill-category h4 {
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(74, 144, 226, 0.15);
+            color: var(--accent-light);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(74, 144, 226, 0.3);
             transition: all 0.3s;
         }
 
-        .skill-item:hover {
-            background: #1b5e20;
-            transform: scale(1.05);
+        .skill-tag:hover {
+            background: rgba(74, 144, 226, 0.25);
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(15, 20, 40, 0.5);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-card h4 {
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 0.8rem 0;
+            color: var(--text-secondary);
+        }
+
+        .contact-item strong {
+            color: var(--text-primary);
+            min-width: 80px;
+        }
+
+        .contact-item a {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-blue);
+            text-decoration: underline;
         }
 
         footer {
-            background: #1b5e20;
-            color: #c8e6c9;
+            background: rgba(10, 14, 39, 0.95);
             text-align: center;
-            padding: 2rem;
-            margin-left: 280px;
+            padding: 2.5rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            position: relative;
+            z-index: 1;
         }
 
-        @media (max-width: 968px) {
-            .sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
-            .main-content {
-                margin-left: 0;
+            .headshot {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            footer {
-                margin-left: 0;
+            .hero .subtitle {
+                font-size: 1.2rem;
             }
 
-            .content-wrapper {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            section {
                 padding: 2rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="CHANGE ME (URL to your headshot image)" alt="Professional Headshot" class="profile-img">
-            <h1>CHANGE ME (Your Name)</h1>
-            <p class="subtitle">Forensic Psychology Student</p>
+    <div class="stars" id="stars"></div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">Coen Howerter</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <a href="mailto:CHANGE ME (Email)" class="contact-link">📧 CHANGE ME (Email)</a>
-            <a href="tel:CHANGE ME (Phone)" class="contact-link">📱 CHANGE ME (Phone)</a>
-            <a href="CHANGE ME (LinkedIn URL)" target="_blank" class="contact-link">💼 LinkedIn</a>
-            <a href="CHANGE ME (GitHub URL)" target="_blank" class="contact-link">💻 GitHub</a>
-            <p class="contact-link" style="cursor: default;">🎓 CHANGE ME (University)</p>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Coen Howerter</h1>
+            <p class="subtitle">Astrobiology & Astrophysics</p>
+            <p class="tagline">Exploring the intersection of life and the cosmos through interdisciplinary research in planetary habitability, biosignatures, and astrobiology</p>
         </div>
-    </aside>
+    </div>
 
-    <main class="main-content">
-        <section class="hero">
-            <h2>Understanding the Mind and the Law</h2>
-            <p>Exploring the intersection of psychology and the justice system through research, analysis, and a commitment to evidence-based practice.</p>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="headshot-container">
+                    <div class="headshot">
+                        <!-- Replace the src below with your actual headshot URL -->
+                        <img src="YOUR_HEADSHOT_URL_HERE" alt="Coen Howerter" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;" onerror="this.parentElement.innerHTML='Add Your Photo<br>Replace URL Above'">
+                    </div>
+                    <div class="credentials">
+                        <h4>Education</h4>
+                        <p><strong>Florida Institute of Technology</strong></p>
+                        <p>B.S. Astrobiology (Expected)</p>
+                        <p>Minor: Physics</p>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p>I am an undergraduate student at Florida Institute of Technology pursuing a Bachelor's degree in Astrobiology with a minor in Physics. My passion lies at the intersection of biology, chemistry, and astrophysics, where I investigate the fundamental questions about life's origins and its potential distribution throughout the universe.</p>
+                    
+                    <p>My academic journey has equipped me with a unique interdisciplinary perspective, combining rigorous training in molecular biology, organic chemistry, and planetary science. I'm particularly fascinated by extremophile organisms on Earth and their implications for life in extreme extraterrestrial environments.</p>
+                    
+                    <p>Through hands-on research projects and computational modeling, I've developed skills in spectroscopy, astrobiology simulation, and data analysis. My goal is to contribute to humanity's understanding of habitability beyond Earth and to participate in the search for biosignatures on exoplanets and within our own solar system.</p>
+                    
+                    <p>Outside of academics, I enjoy programming in Python, developing scientific tools, and staying current with the latest discoveries in planetary exploration and astrobiology missions.</p>
+                </div>
+            </div>
         </section>
 
-        <div class="content-wrapper">
-            <section id="about" class="section">
-                <h2>About Me</h2>
-                <p>CHANGE ME (About Me Paragraph 1) - Write about your background, what drew you to forensic psychology, and your academic interests in the intersection of psychology and law.</p>
-                <p>CHANGE ME (About Me Paragraph 2) - Describe your career goals, what areas of forensic psychology interest you most, and what you hope to achieve in this field.</p>
-            </section>
+        <section id="research">
+            <h2>Research Interests</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <h3>Planetary Habitability</h3>
+                    <p>Investigating the conditions necessary for life to emerge and persist on planetary bodies, including the study of habitable zones, atmospheric composition, and subsurface oceans in moons like Europa and Enceladus.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Extremophile Biology</h3>
+                    <p>Studying organisms that thrive in extreme conditions on Earth as analogs for potential extraterrestrial life, with focus on thermophiles, psychrophiles, and organisms surviving in high-radiation environments.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Biosignature Detection</h3>
+                    <p>Developing methodologies for identifying chemical and spectroscopic signatures of life in exoplanet atmospheres and on surfaces of solar system bodies through remote sensing and in-situ analysis.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Prebiotic Chemistry</h3>
+                    <p>Exploring the chemical pathways that could lead from simple organic molecules to self-replicating systems, including RNA world hypothesis and hydrothermal vent chemistry relevant to life's origins.</p>
+                </div>
+            </div>
+        </section>
 
-            <section id="research" class="section">
-                <h2>Research Interests</h2>
-                <div class="research-cards">
-                    <div class="card">
-                        <h3>CHANGE ME (Research Interest 1 Title)</h3>
-                        <p>CHANGE ME (Research Interest 1 Description)</p>
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="projects-category">
+                <h3>Biology & Chemistry</h3>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <a href="#" target="_blank">Extremophile Cultivation Study</a>
                     </div>
-                    <div class="card">
-                        <h3>CHANGE ME (Research Interest 2 Title)</h3>
-                        <p>CHANGE ME (Research Interest 2 Description)</p>
+                    <div class="project-item">
+                        <a href="#" target="_blank">Organic Molecule Analysis</a>
                     </div>
-                    <div class="card">
-                        <h3>CHANGE ME (Research Interest 3 Title)</h3>
-                        <p>CHANGE ME (Research Interest 3 Description)</p>
+                    <div class="project-item">
+                        <a href="#" target="_blank">Biosignature Research</a>
                     </div>
-                    <div class="card">
-                        <h3>CHANGE ME (Research Interest 4 Title)</h3>
-                        <p>CHANGE ME (Research Interest 4 Description)</p>
+                    <div class="project-item">
+                        <a href="#" target="_blank">Prebiotic Chemistry Simulation</a>
                     </div>
                 </div>
-            </section>
-
-            <section id="experience" class="section">
-                <h2>Experience & Involvement</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>CHANGE ME (Experience 1 Title/Organization)</h3>
-                        <p class="meta">CHANGE ME (Your Role) | CHANGE ME (Dates)</p>
-                        <p>CHANGE ME (Description of responsibilities and accomplishments)</p>
+            </div>
+            
+            <div class="projects-category">
+                <h3>Physics & Astronomy</h3>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <a href="#" target="_blank">Exoplanet Atmosphere Modeling</a>
                     </div>
-                    <div class="timeline-item">
-                        <h3>CHANGE ME (Experience 2 Title/Organization)</h3>
-                        <p class="meta">CHANGE ME (Your Role) | CHANGE ME (Dates)</p>
-                        <p>CHANGE ME (Description of responsibilities and accomplishments)</p>
+                    <div class="project-item">
+                        <a href="#" target="_blank">Spectroscopy Analysis</a>
                     </div>
-                    <div class="timeline-item">
-                        <h3>CHANGE ME (Experience 3 Title/Organization)</h3>
-                        <p class="meta">CHANGE ME (Your Role) | CHANGE ME (Dates)</p>
-                        <p>CHANGE ME (Description of responsibilities and accomplishments)</p>
+                    <div class="project-item">
+                        <a href="#" target="_blank">Habitable Zone Calculations</a>
+                    </div>
+                    <div class="project-item">
+                        <a href="#" target="_blank">Planetary Science Research</a>
                     </div>
                 </div>
-            </section>
-
-            <section id="projects" class="section">
-                <h2>Projects</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3><a href="CHANGE ME (GitHub Repository URL for Project 1)" target="_blank" style="color: #2e7d32; text-decoration: none; border-bottom: 2px solid #2e7d32;">CHANGE ME (Project 1 Title)</a></h3>
-                        <p class="meta">CHANGE ME (Project Type) | CHANGE ME (Date)</p>
-                        <p>CHANGE ME (Description of the project, methods used, and key findings or outcomes)</p>
+            </div>
+            
+            <div class="projects-category">
+                <h3>Python & Computational</h3>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <a href="https://github.com/coenhowerter/LibraryPy" target="_blank">LibraryPy</a>
                     </div>
-                    <div class="timeline-item">
-                        <h3><a href="CHANGE ME (GitHub Repository URL for Project 2)" target="_blank" style="color: #2e7d32; text-decoration: none; border-bottom: 2px solid #2e7d32;">CHANGE ME (Project 2 Title)</a></h3>
-                        <p class="meta">CHANGE ME (Project Type) | CHANGE ME (Date)</p>
-                        <p>CHANGE ME (Description of the project, methods used, and key findings or outcomes)</p>
+                    <div class="project-item">
+                        <a href="#" target="_blank">Astrobiology Data Tools</a>
                     </div>
-                    <div class="timeline-item">
-                        <h3><a href="CHANGE ME (GitHub Repository URL for Project 3)" target="_blank" style="color: #2e7d32; text-decoration: none; border-bottom: 2px solid #2e7d32;">CHANGE ME (Project 3 Title)</a></h3>
-                        <p class="meta">CHANGE ME (Project Type) | CHANGE ME (Date)</p>
-                        <p>CHANGE ME (Description of the project, methods used, and key findings or outcomes)</p>
+                    <div class="project-item">
+                        <a href="#" target="_blank">Spectral Analysis Package</a>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="skills" class="section">
-                <h2>Skills & Competencies</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">CHANGE ME (Skill 1)</div>
-                    <div class="skill-item">CHANGE ME (Skill 2)</div>
-                    <div class="skill-item">CHANGE ME (Skill 3)</div>
-                    <div class="skill-item">CHANGE ME (Skill 4)</div>
-                    <div class="skill-item">CHANGE ME (Skill 5)</div>
-                    <div class="skill-item">CHANGE ME (Skill 6)</div>
-                    <div class="skill-item">CHANGE ME (Skill 7)</div>
-                    <div class="skill-item">CHANGE ME (Skill 8)</div>
-                    <div class="skill-item">CHANGE ME (Skill 9)</div>
-                    <div class="skill-item">CHANGE ME (Skill 10)</div>
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Laboratory Techniques</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microbiology</span>
+                        <span class="skill-tag">Spectroscopy</span>
+                        <span class="skill-tag">Cell Culture</span>
+                        <span class="skill-tag">PCR</span>
+                    </div>
                 </div>
-            </section>
-        </div>
+                <div class="skill-category">
+                    <h4>Computational</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Scientific Computing</span>
+                        <span class="skill-tag">Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Analytical</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Research Design</span>
+                        <span class="skill-tag">Literature Review</span>
+                        <span class="skill-tag">Technical Writing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Scientific Focus</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Astrobiology</span>
+                        <span class="skill-tag">Planetary Science</span>
+                        <span class="skill-tag">Biochemistry</span>
+                        <span class="skill-tag">Astrophysics</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <footer>
-            <p>&copy; 2025 CHANGE ME (Your Name) | Forensic Psychology Student | Understanding the Mind and the Law</p>
-        </footer>
-    </main>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Get In Touch</h4>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:coenhowerter@gmail.com">coenhowerter@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+15616138675">+1 (561) 613-8675</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h4>Professional Links</h4>
+                    <div class="contact-item">
+                        <strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/coen-howerter/" target="_blank">linkedin.com/in/coen-howerter</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/coenhowerter" target="_blank">github.com/coenhowerter</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h4>Institution</h4>
+                    <div class="contact-item">
+                        <strong>University:</strong>
+                        <span>Florida Institute of Technology</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Location:</strong>
+                        <span>Melbourne, Florida</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Coen Howerter | Astrobiology & Astrophysics Research | Florida Institute of Technology</p>
+    </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.sidebar nav a').forEach(anchor => {
+        // Create animated star field
+        const starsContainer = document.getElementById('stars');
+        const starCount = 150;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            const size = Math.random() * 2 + 0.5;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.animationDelay = Math.random() * 4 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             });
+        });
+
+        // Add scroll animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
         });
     </script>
 </body>

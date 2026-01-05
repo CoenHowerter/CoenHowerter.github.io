@@ -272,23 +272,23 @@
         </section>
 
         <section id="research">
-            <h2>Research Interests</h2>
+            <h2>Research</h2>
             <div class="research-grid">
                 <div class="research-card">
-                    <h3>CHANGE ME (Research Interest 1 Title)</h3>
-                    <p>CHANGE ME (Research Interest 1 Description)</p>
+                    <h3>CHANGE ME (Research  1 Title)</h3>
+                    <p>CHANGE ME (Research  1 Description)</p>
                 </div>
                 <div class="research-card">
-                    <h3>CHANGE ME (Research Interest 2 Title)</h3>
-                    <p>CHANGE ME (Research Interest 2 Description)</p>
+                    <h3>CHANGE ME (Research  2 Title)</h3>
+                    <p>CHANGE ME (Research  2 Description)</p>
                 </div>
                 <div class="research-card">
-                    <h3>CHANGE ME (Research Interest 3 Title)</h3>
-                    <p>CHANGE ME (Research Interest 3 Description)</p>
+                    <h3>CHANGE ME (Research  3 Title)</h3>
+                    <p>CHANGE ME (Research  3 Description)</p>
                 </div>
                 <div class="research-card">
-                    <h3>CHANGE ME (Research Interest 4 Title)</h3>
-                    <p>CHANGE ME (Research Interest 4 Description)</p>
+                    <h3>CHANGE ME (Research  4 Title)</h3>
+                    <p>CHANGE ME (Research  4 Description)</p>
                 </div>
             </div>
         </section>

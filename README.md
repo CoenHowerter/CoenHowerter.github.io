@@ -1,3 +1,4 @@
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,6 +75,7 @@
             list-style: none;
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             gap: 2rem;
         }
@@ -208,6 +210,18 @@
             color: #c0d8e8;
         }
 
+        li a {
+            color: #64c8ff;
+            text-decoration: none;
+            transition: color 0.3s;
+            border-bottom: 1px solid rgba(100, 200, 255, 0.3);
+        }
+
+        li a:hover {
+            color: #a0d8ff;
+            border-bottom-color: #a0d8ff;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -236,7 +250,7 @@
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Coursework</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -245,28 +259,36 @@
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p> (About Me Paragraph 1)</p>
-            <p> (About Me Paragraph 2)</p>
+            <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p>CHANGE ME (About Me Paragraph 1) - Write about your background, what drew you to astrobiology, and your academic interests.</p>
+                    <p>CHANGE ME (About Me Paragraph 2) - Describe your career goals and what excites you most about studying life in the universe.</p>
+                </div>
+                <div style="flex: 0 0 250px;">
+                    <img src="CHANGE ME (URL to your headshot image)" alt="Professional Headshot" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(100, 200, 255, 0.3); border: 3px solid #64c8ff;">
+                    <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9rem; color: #a0d8ff;">Coen Howerter</p>
+                </div>
+            </div>
         </section>
 
         <section id="research">
             <h2>Research Interests</h2>
             <div class="research-grid">
                 <div class="research-card">
-                    <h3> (Research Interest 1 Title)</h3>
-                    <p> (Research Interest 1 Description)</p>
+                    <h3>CHANGE ME (Research Interest 1 Title)</h3>
+                    <p>CHANGE ME (Research Interest 1 Description)</p>
                 </div>
                 <div class="research-card">
-                    <h3> (Research Interest 2 Title)</h3>
-                    <p> (Research Interest 2 Description)</p>
+                    <h3>CHANGE ME (Research Interest 2 Title)</h3>
+                    <p>CHANGE ME (Research Interest 2 Description)</p>
                 </div>
                 <div class="research-card">
-                    <h3> (Research Interest 3 Title)</h3>
-                    <p> (Research Interest 3 Description)</p>
+                    <h3>CHANGE ME (Research Interest 3 Title)</h3>
+                    <p>CHANGE ME (Research Interest 3 Description)</p>
                 </div>
                 <div class="research-card">
-                    <h3> (Research Interest 4 Title)</h3>
-                    <p> (Research Interest 4 Description)</p>
+                    <h3>CHANGE ME (Research Interest 4 Title)</h3>
+                    <p>CHANGE ME (Research Interest 4 Description)</p>
                 </div>
             </div>
         </section>
@@ -275,41 +297,41 @@
             <h2>Projects</h2>
             <h3>Biology & Chemistry</h3>
             <ul>
-                <li> (project 1)</li>
-                <li> (project 2)</li>
-                <li> (project 3)</li>
-                <li> (project 4)</li>
+                <li><a href="CHANGE ME (Project 1 URL)" target="_blank">CHANGE ME (Project 1)</a></li>
+                <li><a href="CHANGE ME (Project 2 URL)" target="_blank">CHANGE ME (Project 2)</a></li>
+                <li><a href="CHANGE ME (Project 3 URL)" target="_blank">CHANGE ME (Project 3)</a></li>
+                <li><a href="CHANGE ME (Project 4 URL)" target="_blank">CHANGE ME (Project 4)</a></li>
             </ul>
             
             <h3>Physics & Astronomy</h3>
             <ul>
-                <li> (project 1)</li>
-                <li> (project 2)</li>
-                <li> (project 3)</li>
-                <li> (project 4)</li>
+                <li><a href="CHANGE ME (Project 1 URL)" target="_blank">CHANGE ME (Project 1)</a></li>
+                <li><a href="CHANGE ME (Project 2 URL)" target="_blank">CHANGE ME (Project 2)</a></li>
+                <li><a href="CHANGE ME (Project 3 URL)" target="_blank">CHANGE ME (Project 3)</a></li>
+                <li><a href="CHANGE ME (Project 4 URL)" target="_blank">CHANGE ME (Project 4)</a></li>
             </ul>
             
             <h3>Python</h3>
             <ul>
-                <li>LibraryPy</li>
-                <li> (project 2)</li>
-                <li> (project 3)</li>
+                <li><a href="https://github.com/coenhowerter/LibraryPy" target="_blank">LibraryPy</a></li>
+                <li><a href="CHANGE ME (Project 2 URL)" target="_blank">CHANGE ME (Project 2)</a></li>
+                <li><a href="CHANGE ME (Project 3 URL)" target="_blank">CHANGE ME (Project 3)</a></li>
             </ul>
         </section>
 
         <section id="skills">
             <h2>Skills & Techniques</h2>
             <div class="skills">
-                <span class="skill-tag"> (Skill 1)</span>
-                <span class="skill-tag"> (Skill 2)</span>
-                <span class="skill-tag"> (Skill 3)</span>
-                <span class="skill-tag"> (Skill 4)</span>
-                <span class="skill-tag"> (Skill 5)</span>
-                <span class="skill-tag"> (Skill 6)</span>
-                <span class="skill-tag"> (Skill 7)</span>
-                <span class="skill-tag"> (Skill 8)</span>
-                <span class="skill-tag"> (Skill 9)</span>
-                <span class="skill-tag"> (Skill 10)</span>
+                <span class="skill-tag">CHANGE ME (Skill 1)</span>
+                <span class="skill-tag">CHANGE ME (Skill 2)</span>
+                <span class="skill-tag">CHANGE ME (Skill 3)</span>
+                <span class="skill-tag">CHANGE ME (Skill 4)</span>
+                <span class="skill-tag">CHANGE ME (Skill 5)</span>
+                <span class="skill-tag">CHANGE ME (Skill 6)</span>
+                <span class="skill-tag">CHANGE ME (Skill 7)</span>
+                <span class="skill-tag">CHANGE ME (Skill 8)</span>
+                <span class="skill-tag">CHANGE ME (Skill 9)</span>
+                <span class="skill-tag">CHANGE ME (Skill 10)</span>
             </div>
         </section>
 
@@ -364,3 +386,4 @@
         });
     </script>
 </body>
+</html>

@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astrobiology Portfolio</title>
+    <title>Forensic Psychology Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -14,85 +13,83 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #e0e0e0;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            color: #2a2a2a;
+            background: linear-gradient(135deg, #0d3d2d 0%, #1a4d3a 50%, #0a2618 100%);
             min-height: 100vh;
         }
 
-        .stars {
+        .background-pattern {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
+            opacity: 0.03;
             z-index: 0;
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.05) 2px, rgba(255,255,255,.05) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.05) 2px, rgba(255,255,255,.05) 4px);
+            pointer-events: none;
         }
 
         header {
-            background: rgba(10, 14, 39, 0.8);
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.9) 0%, rgba(46, 125, 50, 0.9) 100%);
             backdrop-filter: blur(10px);
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
-            border-bottom: 2px solid rgba(100, 200, 255, 0.3);
+            border-bottom: 3px solid rgba(34, 139, 34, 0.5);
             position: relative;
             z-index: 1;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
-            font-size: 2.5rem;
-            color: #64c8ff;
+            font-size: 2.8rem;
+            color: #ffffff;
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 20px rgba(100, 200, 255, 0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
         }
 
         header p {
-            font-size: 1.2rem;
-            color: #a0d8ff;
+            font-size: 1.3rem;
+            color: #f8f9fa;
+            font-weight: 300;
         }
 
         nav {
-            background: rgba(26, 31, 58, 0.9);
+            background: rgba(26, 26, 46, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: relative;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            align-items: baseline;
             flex-wrap: wrap;
             gap: 2rem;
         }
 
         nav a {
-            color: #64c8ff;
+            color: #4caf50;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s;
             padding: 0.5rem 1rem;
             border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
         nav a:hover {
-            background: rgba(100, 200, 255, 0.2);
+            background: rgba(76, 175, 80, 0.2);
             transform: translateY(-2px);
+            color: #81c784;
         }
 
         .container {
@@ -104,26 +101,33 @@
         }
 
         section {
-            background: rgba(26, 31, 58, 0.7);
+            background: rgba(248, 249, 250, 0.95);
             backdrop-filter: blur(10px);
             margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(100, 200, 255, 0.2);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 5px solid #2e7d32;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
-            color: #64c8ff;
+            color: #2e7d32;
             margin-bottom: 1.5rem;
-            font-size: 2rem;
-            border-bottom: 2px solid rgba(100, 200, 255, 0.3);
+            font-size: 2.2rem;
+            font-weight: 700;
+            border-bottom: 3px solid rgba(46, 125, 50, 0.3);
             padding-bottom: 0.5rem;
         }
 
         h3 {
-            color: #a0d8ff;
+            color: #495057;
             margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: #495057;
             margin-bottom: 1rem;
         }
 
@@ -135,17 +139,23 @@
         }
 
         .research-card {
-            background: rgba(15, 20, 40, 0.6);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid rgba(100, 200, 255, 0.2);
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(46, 125, 50, 0.05) 100%);
+            padding: 1.8rem;
+            border-radius: 10px;
+            border: 2px solid rgba(76, 175, 80, 0.2);
             transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(100, 200, 255, 0.2);
-            border-color: #64c8ff;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(76, 175, 80, 0.3);
+            border-color: #4caf50;
+        }
+
+        .research-card h3 {
+            color: #2e7d32;
+            margin-top: 0;
         }
 
         .skills {
@@ -156,18 +166,25 @@
         }
 
         .skill-tag {
-            background: rgba(100, 200, 255, 0.2);
-            color: #64c8ff;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
             font-size: 0.9rem;
-            border: 1px solid rgba(100, 200, 255, 0.3);
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(46, 125, 50, 0.4);
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
             margin-top: 1rem;
         }
 
@@ -175,30 +192,40 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            padding: 1rem;
+            background: rgba(76, 175, 80, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .contact-item strong {
+            color: #2e7d32;
+            min-width: 100px;
         }
 
         .contact-item a {
-            color: #64c8ff;
+            color: #495057;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .contact-item a:hover {
-            color: #a0d8ff;
+            color: #2e7d32;
         }
 
         footer {
-            background: rgba(10, 14, 39, 0.9);
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
-            border-top: 2px solid rgba(100, 200, 255, 0.3);
+            border-top: 3px solid rgba(46, 125, 50, 0.5);
             position: relative;
             z-index: 1;
         }
 
         footer p {
-            color: #a0d8ff;
+            color: #f8f9fa;
+            margin: 0;
         }
 
         ul {
@@ -207,20 +234,9 @@
         }
 
         li {
-            margin: 0.5rem 0;
-            color: #c0d8e8;
-        }
-
-        li a {
-            color: #64c8ff;
-            text-decoration: none;
-            transition: color 0.3s;
-            border-bottom: 1px solid rgba(100, 200, 255, 0.3);
-        }
-
-        li a:hover {
-            color: #a0d8ff;
-            border-bottom-color: #a0d8ff;
+            margin: 0.8rem 0;
+            color: #495057;
+            line-height: 1.6;
         }
 
         @media (max-width: 768px) {
@@ -236,21 +252,26 @@
             .container {
                 padding: 1rem;
             }
+
+            section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars" id="stars"></div>
+    <div class="background-pattern"></div>
 
     <header>
-        <h1>Coen Howerter</h1>
-        <p>Astrobiology | Astrophysics</p>
+        <h1>Saiya Bonnett</h1>
+        <p>Forensic Psychology Undergraduate Student</p>
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#research">Research</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -260,20 +281,12 @@
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 300px;">
-                    <p>CHANGE ME (About Me Paragraph 1) - Write about your background, what drew you to astrobiology, and your academic interests.</p>
-                    <p>CHANGE ME (About Me Paragraph 2) - Describe your career goals and what excites you most about studying life in the universe.</p>
-                </div>
-                <div style="flex: 0 0 250px;">
-                    <img src="CHANGE ME (URL to your headshot image)" alt="Professional Headshot" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(100, 200, 255, 0.3); border: 3px solid #64c8ff;">
-                    <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9rem; color: #a0d8ff;">Coen Howerter</p>
-                </div>
-            </div>
+            <p>about you background, what drew you to forensic psychology, and your academic interests in the intersection of psychology and law.</p>
+            <p>Describe your career goals, what areas of forensic psychology interest you most, and what you hope to achieve in this field.</p>
         </section>
 
         <section id="research">
-            <h2>Research Interests</h2>
+            <h2>Research</h2>
             <div class="research-grid">
                 <div class="research-card">
                     <h3>CHANGE ME (Research Interest 1 Title)</h3>
@@ -294,34 +307,44 @@
             </div>
         </section>
 
+        <section id="experience">
+            <h2>Experience & Involvement</h2>
+            <h3>CHANGE ME (Experience 1 Title/Organization)</h3>
+            <p><strong>Role:</strong> CHANGE ME (Your Role)</p>
+            <p><strong>Duration:</strong> CHANGE ME (Dates)</p>
+            <p>CHANGE ME (Description of responsibilities and accomplishments)</p>
+
+            <h3>CHANGE ME (Experience 2 Title/Organization)</h3>
+            <p><strong>Role:</strong> CHANGE ME (Your Role)</p>
+            <p><strong>Duration:</strong> CHANGE ME (Dates)</p>
+            <p>CHANGE ME (Description of responsibilities and accomplishments)</p>
+
+            <h3>CHANGE ME (Experience 3 Title/Organization)</h3>
+            <p><strong>Role:</strong> CHANGE ME (Your Role)</p>
+            <p><strong>Duration:</strong> CHANGE ME (Dates)</p>
+            <p>CHANGE ME (Description of responsibilities and accomplishments)</p>
+        </section>
+
         <section id="projects">
             <h2>Projects</h2>
-            <h3>Biology & Chemistry</h3>
-            <ul>
-                <li><a href="CHANGE ME (Project 1 URL)" target="_blank">CHANGE ME (Project 1)</a></li>
-                <li><a href="CHANGE ME (Project 2 URL)" target="_blank">CHANGE ME (Project 2)</a></li>
-                <li><a href="CHANGE ME (Project 3 URL)" target="_blank">CHANGE ME (Project 3)</a></li>
-                <li><a href="CHANGE ME (Project 4 URL)" target="_blank">CHANGE ME (Project 4)</a></li>
-            </ul>
-            
-            <h3>Physics & Astronomy</h3>
-            <ul>
-                <li><a href="CHANGE ME (Project 1 URL)" target="_blank">CHANGE ME (Project 1)</a></li>
-                <li><a href="CHANGE ME (Project 2 URL)" target="_blank">CHANGE ME (Project 2)</a></li>
-                <li><a href="CHANGE ME (Project 3 URL)" target="_blank">CHANGE ME (Project 3)</a></li>
-                <li><a href="CHANGE ME (Project 4 URL)" target="_blank">CHANGE ME (Project 4)</a></li>
-            </ul>
-            
-            <h3>Python</h3>
-            <ul>
-                <li><a href="https://github.com/coenhowerter/LibraryPy" target="_blank">LibraryPy</a></li>
-                <li><a href="CHANGE ME (Project 2 URL)" target="_blank">CHANGE ME (Project 2)</a></li>
-                <li><a href="CHANGE ME (Project 3 URL)" target="_blank">CHANGE ME (Project 3)</a></li>
-            </ul>
+            <h3>CHANGE ME (Project 1 Title)</h3>
+            <p><strong>Type:</strong> CHANGE ME (Project Type - e.g., Research Project, Case Study, etc.)</p>
+            <p><strong>Date:</strong> CHANGE ME (Completion Date or Duration)</p>
+            <p>CHANGE ME (Description of the project, methods used, and key findings or outcomes)</p>
+
+            <h3>CHANGE ME (Project 2 Title)</h3>
+            <p><strong>Type:</strong> CHANGE ME (Project Type)</p>
+            <p><strong>Date:</strong> CHANGE ME (Completion Date or Duration)</p>
+            <p>CHANGE ME (Description of the project, methods used, and key findings or outcomes)</p>
+
+            <h3>CHANGE ME (Project 3 Title)</h3>
+            <p><strong>Type:</strong> CHANGE ME (Project Type)</p>
+            <p><strong>Date:</strong> CHANGE ME (Completion Date or Duration)</p>
+            <p>CHANGE ME (Description of the project, methods used, and key findings or outcomes)</p>
         </section>
 
         <section id="skills">
-            <h2>Skills & Techniques</h2>
+            <h2>Skills & Competencies</h2>
             <div class="skills">
                 <span class="skill-tag">CHANGE ME (Skill 1)</span>
                 <span class="skill-tag">CHANGE ME (Skill 2)</span>
@@ -341,53 +364,47 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <strong>Email:</strong>
-                    <a href="mailto:coenhowerter@gmail.com">coenhowerter@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Phone:</strong>
-                    <a href="tel:+15616138675">+1 (561) 613-8675</a>
+                    <a href="mailto:Yoshibonnett@gmail.com ">Saiya Bonnett</a>
                 </div>
                 <div class="contact-item">
                     <strong>LinkedIn:</strong>
-                    <a href="https://www.linkedin.com/in/coen-howerter/" target="_blank">LinkedIn</a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
                 </div>
                 <div class="contact-item">
-                    <strong>GitHub:</strong>
-                    <a href="https://github.com/coenhowerter" target="_blank">GitHub</a>
+                    <strong>Phone Number:</strong>
+                    <a href="https://github.com/yourusername" target="_blank">(321)-917-8521</a>
                 </div>
                 <div class="contact-item">
                     <strong>University:</strong>
                     <span>Florida Institute of Technology</span>
                 </div>
-
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Coen Howerter | Astrobiology Student | Exploring Life in the Universe</p>
+        <p>&copy; 2025 Saiya Bonnett | Forensic Psychology | Understanding the Mind</p>
     </footer>
 
     <script>
-        // Create animated stars
-        const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.width = Math.random() * 2 + 1 + 'px';
-            star.style.height = star.style.width;
-            star.style.animationDelay = Math.random() * 3 + 's';
-            starsContainer.appendChild(star);
-        }
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Add subtle hover effect to sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
             });
         });
     </script>

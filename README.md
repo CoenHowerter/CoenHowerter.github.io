@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -75,7 +76,7 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: baseline;
             flex-wrap: wrap;
             gap: 2rem;
         }
